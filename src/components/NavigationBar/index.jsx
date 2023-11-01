@@ -1,11 +1,12 @@
 import Link from "next/link"
+import InputSearch from "./InputSearch"
 
 const NavigationBar = () => {
     return (
         <header className="mb-6">
-            <div className="bg-zinc-900 flex md:flex-row flex-col justify-between p-8 gap-2">
+            <div className="bg-zinc-900 flex md:flex-row flex-col justify-between items-center p-6 gap-2">
                 <Link href="/" className="font-medium text-lg">DaftarAnimeKu</Link>
-                <input placeholder="Cari anime..."/>
+                <InputSearch/>
             </div>
         </header>
     )
