@@ -1,13 +1,11 @@
 import AnimeCard from "@/components/AnimeCard"
 import Header from "@/components/AnimeCard/Header"
+import { getAnimeResponse } from "@/libs/api-libs"
 
 const Page = async ({ params }) => {
   const { keyword } = params
-  const decodeKeyword = decodeURI(keyword)
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/anime?q=${keyword}`
-  )
-  const searchAnime = await response.json()
+  const decodeKeyword = decodeURI(keyword)  
+  const searchAnime = await getAnimeResponse("anime", `q=${decodeKeyword}`)
 
   return (
     <div className="md:px-6 md:pb-6 px-4 pb-4">
